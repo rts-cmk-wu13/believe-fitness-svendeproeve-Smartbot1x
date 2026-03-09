@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-Uranium: #f1c40e;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --bg-gradient: linear-gradient(180deg, #fff 0%, rgba(0, 0, 0, 0.5) 100%);
+}
