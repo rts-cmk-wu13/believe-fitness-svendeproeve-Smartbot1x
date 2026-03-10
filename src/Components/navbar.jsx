@@ -5,10 +5,10 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const links = [
-  { label: "Home", href: "/" },
-  { label: "Popular classes", href: "/classes" },
-  { label: "Search", href: "/search" },
-  { label: "My Profile", href: "/profile" },
+  { label: "Home", href: "/Home" },
+  { label: "Popular classes", href: "/Classes" },
+  { label: "Search", href: "/Search" },
+  { label: "My Profile", href: "/Profile" },
 ];
 
 export default function Navbar() {
@@ -17,12 +17,17 @@ export default function Navbar() {
 
   const openMenu = () => setIsOpen(true);
   const closeMenu = () => setIsOpen(false);
+  // Don't show on splash page return null!
+  if (pathname === "/") {
+    return null;
+  }
+  const isIconcolor = pathname === "/Home" ? "text-white" : "text-[#9e9e9e]";
 
   return (
     <>
       <button
         onClick={openMenu}
-        className="fixed top-6 right-6 z-40 cursor-pointer"
+        className={`fixed top-6 right-6 z-40 cursor-pointer ${isIconcolor}`}
         aria-label="Open menu"
       >
         <svg
@@ -34,21 +39,21 @@ export default function Navbar() {
         >
           <path
             d="M0 1.5C0 1.301 0.0379944 1.11 0.114014 0.926003C0.190002 0.741997 0.299011 0.580002 0.438995 0.439003C0.579987 0.299004 0.742004 0.190002 0.925995 0.113998C1.10999 0.038002 1.30099 0 1.5 0H19.5C19.699 0 19.89 0.038002 20.074 0.113998C20.258 0.190002 20.42 0.299004 20.561 0.439003C20.701 0.580002 20.81 0.741997 20.886 0.926003C20.962 1.11 21 1.301 21 1.5C21 1.699 20.962 1.89 20.886 2.074C20.81 2.258 20.701 2.42 20.561 2.561C20.42 2.701 20.258 2.81 20.074 2.886C19.89 2.962 19.699 3 19.5 3H1.5C1.30099 3 1.10999 2.962 0.925995 2.886C0.742004 2.81 0.579987 2.701 0.438995 2.561C0.299011 2.42 0.190002 2.258 0.114014 2.074C0.0379944 1.89 0 1.699 0 1.5Z"
-            fill="white"
+            fill="currentColor"
           />
           <path
             d="M0 7.5C0 7.301 0.0379944 7.11 0.114014 6.926C0.190002 6.742 0.299011 6.58 0.438995 6.439C0.579987 6.299 0.742004 6.19 0.925995 6.114C1.10999 6.038 1.30099 6 1.5 6H19.5C19.699 6 19.89 6.038 20.074 6.114C20.258 6.19 20.42 6.299 20.561 6.439C20.701 6.58 20.81 6.742 20.886 6.926C20.962 7.11 21 7.301 21 7.5C21 7.699 20.962 7.89 20.886 8.074C20.81 8.258 20.701 8.42 20.561 8.561C20.42 8.701 20.258 8.81 20.074 8.886C19.89 8.962 19.699 9 19.5 9H1.5C1.30099 9 1.10999 8.962 0.925995 8.886C0.742004 8.81 0.579987 8.701 0.438995 8.561C0.299011 8.42 0.190002 8.258 0.114014 8.074C0.0379944 7.89 0 7.699 0 7.5Z"
-            fill="white"
+            fill="currentColor"
           />
           <path
             d="M10 13.5C10 13.301 10.038 13.11 10.114 12.926C10.19 12.742 10.299 12.58 10.439 12.439C10.58 12.299 10.742 12.19 10.926 12.114C11.11 12.038 11.301 12 11.5 12H19.5C19.699 12 19.89 12.038 20.074 12.114C20.258 12.19 20.42 12.299 20.561 12.439C20.701 12.58 20.81 12.742 20.886 12.926C20.962 13.11 21 13.301 21 13.5C21 13.699 20.962 13.89 20.886 14.074C20.81 14.258 20.701 14.42 20.561 14.561C20.42 14.701 20.258 14.81 20.074 14.886C19.89 14.962 19.699 15 19.5 15H11.5C11.301 15 11.11 14.962 10.926 14.886C10.742 14.81 10.58 14.701 10.439 14.561C10.299 14.42 10.19 14.258 10.114 14.074C10.038 13.89 10 13.699 10 13.5Z"
-            fill="white"
+            fill="currentColor"
           />
         </svg>
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-50 flex flex-col px-8 py-16">
+        <div className="fixed inset-0 bg-white z-50 flex flex-col px-8 py-16 ">
           <button
             onClick={closeMenu}
             className="absolute top-6 right-6 cursor-pointer"
@@ -80,7 +85,7 @@ export default function Navbar() {
                 onClick={closeMenu}
                 className={`text-[28px] font-normal text-center transition-colors ${
                   pathname === link.href
-                    ? "text-Uranium font-semibold"
+                    ? "text-Uranium font-semibold underline underline-offset-4"
                     : "text-black"
                 }`}
               >

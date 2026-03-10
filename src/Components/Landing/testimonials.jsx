@@ -35,17 +35,17 @@ export default function TestimonialSlider() {
       className="flex flex-col items-center w-102.5 px-5 py-8 gap-6"
       style={{
         background:
-          "linear-gradient(0deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%), url('/img/testimonial.png') lightgray 50% / cover no-repeat",
+          "linear-gradient(0deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%), url('/img/testimonial.png') background-position: 50% center background-size: cover background-blend-mode: multiply",
       }}
     >
-      <h2 className="w-[370px] text-white text-center font-[Poppins] text-2xl font-bold leading-[100%]">
+      <h2 className="w-[370px] text-white text-center text-2xl font-bold leading-[100%]">
         A word from other Believers
       </h2>
       <article className="flex flex-col items-center gap-2 w-full">
-        <p className="w-[370px] text-white text-center font-[Poppins] text-base font-normal leading-[160%]">
+        <p className="w-[370px] text-white text-center text-base font-normal leading-[160%]">
           {activeTestimonial.text}
         </p>
-        <p className="w-[370px] text-white text-center font-[Poppins] text-base font-semibold leading-normal">
+        <p className="w-[370px] text-white text-center  text-base font-semibold leading-normal">
           {activeTestimonial.name}
         </p>
       </article>

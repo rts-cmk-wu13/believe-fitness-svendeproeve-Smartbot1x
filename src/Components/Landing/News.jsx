@@ -6,7 +6,7 @@ export default async function NewsList() {
   if (!success) {
     return (
       <section className="px-4 py-6 max-w-lg">
-        <h2 className="text-[--color-Uranium] text-4xl font-black mb-6 font-[Poppins]">
+        <h2 className="text-[--color-Uranium] text-4xl font-black mb-6 ">
           News
         </h2>
         <p className="text-red-500 text-sm">{message}</p>

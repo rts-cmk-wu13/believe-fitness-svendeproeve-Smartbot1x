@@ -10,29 +10,26 @@ export default function Newsletter() {
   );
 
   return (
-    <section className="w-89 h-43.5 flex-center mb-10 mt-10">
-      <h1>Sign up for our newsletter</h1>
-      <p className="">
+    <>
+      <h1 className="text-[24px] text-base leading-[120%] font-bold mx-2.5 my-4 ">Sign up for our newsletter</h1>
+      <p className="text-black  text-base font-normal leading-[160%] mx-2.5 my-4 ">
         Sign up to receive the latest news and announcements from Believe
         Fitness{" "}
       </p>
+    <section className="w-92.5  flex-center ">
 
-      <form action={formAction} className="flex gap-3 mt-4">
+      <form action={formAction} className="newsletter_form flex gap-3 my-4">
         <input
           type="email"
           name="email"
           placeholder="Enter your email..."
-          className="
-          flex-1 px-4
-           py-3 bg-white
-            text-background   
-            rounded-sm text-base 
-            outline-none"
+          className="newsletter_input
+          "
         />
         <button
           type="submit"
           disabled={isPending}
-          className="flex justify-center items-center gap-2 w-20 px-2.5 py-4 rounded-[10px] bg-secondary text-background font-medium shadow-(--box-shadow) hover:bg-white disabled:opacity-50 cursor-pointer"
+          className="small_bttn"
         >
           {isPending ? "signingup" : "signup"}
         </button>
@@ -46,5 +43,7 @@ export default function Newsletter() {
         </p>
       )}
     </section>
+    </>
   );
+  
 }
