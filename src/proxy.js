@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 
 // This function can be marked `async` if using `await` inside
 export function proxy(request) {
-    if (!request.cookies.has("accessToken"))
+    if (!request.cookies.has("fitness-accessToken"))
         return NextResponse.redirect(new URL('/unauthorized', request.url))
 }
 
@@ -10,5 +10,5 @@ export function proxy(request) {
 // export default function proxy(request) { ... }
 
 export const config = {
-    matcher: [/* '/Classes/:path*', '/Profile/:path*' */],
+    matcher: ['/Classes/:path*', '/Profile/:path*'],
 }

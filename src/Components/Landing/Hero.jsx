@@ -18,7 +18,7 @@ export default function Hero() {
         </Link>
         <Link
           type="button"
-          href="/"
+          href="/Login"
           className="absolute top-3/4 left-6 bg-Uranium text-Black w-24.5 h-12  rounded-3xl transition duration-300 translate-x-30  flex items-center justify-center uppercase"
         >
           login

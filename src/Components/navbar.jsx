@@ -17,10 +17,21 @@ export default function Navbar() {
 
   const openMenu = () => setIsOpen(true);
   const closeMenu = () => setIsOpen(false);
-  // Don't show on splash page return null!
+
+
+
+  // Don't show hamburger menu on home, login and signup page.
+  //  if one of these paths is active return null for burger menu 
   if (pathname === "/") {
     return null;
   }
+  if (pathname === "/Login") {
+    return null;
+  }
+  if (pathname === "/Signup") {
+    return null;
+  }
+
   const isIconcolor = pathname === "/Home" ? "text-white" : "text-[#9e9e9e]";
 
   return (

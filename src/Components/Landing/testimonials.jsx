@@ -32,10 +32,12 @@ export default function TestimonialSlider() {
   return (
     <section
       aria-label="Testimonials"
-      className="flex flex-col items-center w-102.5 px-5 py-8 gap-6"
+      className="flex flex-col items-center w-full px-5 py-8 gap-6"
       style={{
-        background:
-          "linear-gradient(0deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%), url('/img/testimonial.png') background-position: 50% center background-size: cover background-blend-mode: multiply",
+        background: "linear-gradient(0deg, rgba(0,0,0,0.50) 0%, rgba(0,0,0,0.50) 100%), url('/img/testimonial.png')",
+        backgroundPosition: "50% center",
+        backgroundSize: "cover",
+        backgroundBlendMode: "multiply",
       }}
     >
       <h2 className="w-[370px] text-white text-center text-2xl font-bold leading-[100%]">
