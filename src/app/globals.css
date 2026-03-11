@@ -34,7 +34,7 @@
 
 
 /* input syling
-    trynna make global css for different pages of the app, but not sure if this is the best way to do it found it
+    trynna make global css for different pages of the app, but not sure if this is the best way to do it
  */ 
 
 .base_input {
@@ -57,7 +57,7 @@ border: 1px solid #9E9E9E;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 142px;
+    
   }
 }
 
@@ -104,6 +104,8 @@ border: 1px solid #9E9E9E;
   min-height: 20px;
   font-size: 14px;
   color: #f87171;
+  text-align: center;
+
 }
 
 .newsletter_input {
@@ -150,3 +152,26 @@ flex: 1 0 0;
   line-height: normal;
 
 }
+
+/* class styling*/
+ .heading_popular {
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 17px; 
+ }
+ .heading_classes {
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+ }
+
+.heading_classnames {
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: 17px;
+ }
+
+ /* signing up and in heading  styling */

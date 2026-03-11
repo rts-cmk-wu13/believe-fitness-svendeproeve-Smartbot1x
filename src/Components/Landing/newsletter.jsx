@@ -37,7 +37,7 @@ export default function Newsletter() {
 
       {state.message && (
         <p
-          className={`mt-3 text-sm ${state.success ? "text-green-400" : "text-red-400"}`}
+          className={`mt-3 text-sm ${state.success ? "text-green-400" : "error_message"}`}
         >
           {state.message}
         </p>
