@@ -19,19 +19,35 @@ export default function CreateUserForm() {
         className="form_container"
       >
         
-        <div>
-      <input
-    name="firstName"
+      <div>
+       <input
+    name="fullName"
     placeholder="Enter your name..."
-    defaultValue={state.values?.firstName}
+    defaultValue={state.values?.fullName}
     className="base_input"
 />
-          {state.errors?.firstName && (
+          {state.errors?.fullName && (
             <p className="error_message ">
-              {state.errors.firstName[0]}
+              {state.errors.fullName[0]}
             </p>
           )}
         </div>
+
+
+        {/* Last Name */}
+{/*         <div>
+      <input
+    name="lastName"
+    placeholder="Enter your last name..."
+    defaultValue={state.values?.lastName}
+    className="base_input"
+/>
+          {state.errors?.lastName && (
+            <p className="error_message ">
+              {state.errors.lastName[0]}
+            </p>
+          )}
+        </div> */}
 
         {/* Username */}
         <div>

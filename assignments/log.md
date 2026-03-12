@@ -20,11 +20,11 @@ Eftermiddag - (16:00)
 ## Dag 3
 
 Morgen - (9:05)  
-Eftermiddag - (tidspunkt)
+Eftermiddag - (16:00)
 
 ## Dag 4
 
-Morgen - (tidspunkt)  
+Morgen - (9:00)  
 Eftermiddag - (tidspunkt)
 
 ## Dag 5
