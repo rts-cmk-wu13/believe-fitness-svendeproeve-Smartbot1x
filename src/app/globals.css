@@ -175,3 +175,26 @@ line-height: 17px;
  }
 
  /* signing up and in heading  styling */
+
+
+
+
+
+
+ /* splash */
+ .animate-fade-in-delayed {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out 0.7s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
