@@ -3,24 +3,16 @@
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { logoutUser } from "./logout";
 
-const links = [
-  { label: "Home", href: "/Home" },
-  { label: "Popular classes", href: "/Classes" },
-  { label: "Search", href: "/Search" },
-  { label: "My Profile", href: "/Profile" },
-];
-
-export default function Navbar() {
+export default function Navbar({ isLoggedIn }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   const openMenu = () => setIsOpen(true);
   const closeMenu = () => setIsOpen(false);
 
-
-
-  // Don't show hamburger menu on home, login and signup page.
+    // Don't show hamburger menu on home, login and signup page.
   //  if one of these paths is active return null for burger menu 
   if (pathname === "/") {
     return null;
@@ -34,11 +26,21 @@ export default function Navbar() {
 
   const isIconcolor = pathname === "/Home" ? "text-white" : "text-[#9e9e9e]";
 
+ const links = [
+    { label: "Home", href: "/Home" },
+    { label: "Popular classes", href: "/Classes" },
+    { label: "Search", href: "/Search" },
+    { label: "My Profile", href: "/Profile" },
+    isLoggedIn
+      ? { label: "Log Out", href: "/Logout" }
+      : { label: "Log In", href: "/Login" },
+  ];
+
   return (
     <>
       <button
         onClick={openMenu}
-        className={`fixed top-6 right-6 z-40 cursor-pointer ${isIconcolor}`}
+        className={`drop-shadow-lg fixed top-6 right-6 z-40 cursor-pointer ${isIconcolor}`}
         aria-label="Open menu"
       >
         <svg
@@ -64,45 +66,55 @@ export default function Navbar() {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-white z-50 flex flex-col px-8 py-16 ">
+        <div className="fixed inset-0 bg-white z-50 flex flex-col px-8 py-16">
           <button
             onClick={closeMenu}
             className="absolute top-6 right-6 cursor-pointer"
             aria-label="Close menu"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-            >
-              <path
-                d="M0.439026 15.289C0.299011 15.148 0.190002 14.986 0.114014 14.802C0.0380249 14.618 0 14.427 0 14.228C0 14.029 0.0380249 13.838 0.114014 13.654C0.190002 13.47 0.299011 13.308 0.439026 13.167L13.167 0.438995C13.308 0.298996 13.47 0.189995 13.654 0.113998C13.838 0.038002 14.029 0 14.228 0C14.427 0 14.618 0.038002 14.802 0.113998C14.986 0.189995 15.148 0.298996 15.289 0.438995C15.429 0.580002 15.538 0.741997 15.614 0.925995C15.69 1.11 15.728 1.30099 15.728 1.5C15.728 1.699 15.69 1.89 15.614 2.074C15.538 2.258 15.429 2.42 15.289 2.561L2.561 15.289C2.42001 15.429 2.25803 15.538 2.07401 15.614C1.89001 15.69 1.69901 15.728 1.5 15.728C1.30103 15.728 1.11002 15.69 0.926025 15.614C0.742004 15.538 0.580017 15.429 0.439026 15.289Z"
-                fill="#9E9E9E"
-              />
-              <path
-                d="M0.439026 0.438995C0.580017 0.298996 0.742004 0.189995 0.926025 0.113998C1.11002 0.038002 1.30103 0 1.5 0C1.69901 0 1.89001 0.038002 2.07401 0.113998C2.25803 0.189995 2.42001 0.298996 2.561 0.438995L15.289 13.167C15.429 13.308 15.538 13.47 15.614 13.654C15.69 13.838 15.728 14.029 15.728 14.228C15.728 14.427 15.69 14.618 15.614 14.802C15.538 14.986 15.429 15.148 15.289 15.289C15.148 15.429 14.986 15.538 14.802 15.614C14.618 15.69 14.427 15.728 14.228 15.728C14.029 15.728 13.838 15.69 13.654 15.614C13.47 15.538 13.308 15.429 13.167 15.289L0.439026 2.561C0.299011 2.42 0.190002 2.258 0.114014 2.074C0.0380249 1.89 0 1.699 0 1.5C0 1.30099 0.0380249 1.11 0.114014 0.925995C0.190002 0.741997 0.299011 0.580002 0.439026 0.438995Z"
-                fill="#9E9E9E"
-              />
-            </svg>
+           <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="16"
+  height="16"
+  viewBox="0 0 16 16"
+  fill="none"
+>
+  <path
+    d="M0.439026 15.289C0.299011 15.148 0.190002 14.986 0.114014 14.802C0.0380249 14.618 0 14.427 0 14.228C0 14.029 0.0380249 13.838 0.114014 13.654C0.190002 13.47 0.299011 13.308 0.439026 13.167L13.167 0.438995C13.308 0.298996 13.47 0.189995 13.654 0.113998C13.838 0.038002 14.029 0 14.228 0C14.427 0 14.618 0.038002 14.802 0.113998C14.986 0.189995 15.148 0.298996 15.289 0.438995C15.429 0.580002 15.538 0.741997 15.614 0.925995C15.69 1.11 15.728 1.30099 15.728 1.5C15.728 1.699 15.69 1.89 15.614 2.074C15.538 2.258 15.429 2.42 15.289 2.561L2.561 15.289C2.42001 15.429 2.25803 15.538 2.07401 15.614C1.89001 15.69 1.69901 15.728 1.5 15.728C1.30103 15.728 1.11002 15.69 0.926025 15.614C0.742004 15.538 0.580017 15.429 0.439026 15.289Z"
+    fill="#9E9E9E"
+  />
+  <path
+    d="M0.439026 0.438995C0.580017 0.298996 0.742004 0.189995 0.926025 0.113998C1.11002 0.038002 1.30103 0 1.5 0C1.69901 0 1.89001 0.038002 2.07401 0.113998C2.25803 0.189995 2.42001 0.298996 2.561 0.438995L15.289 13.167C15.429 13.308 15.538 13.47 15.614 13.654C15.69 13.838 15.728 14.029 15.728 14.228C15.728 14.427 15.69 14.618 15.614 14.802C15.538 14.986 15.429 15.148 15.289 15.289C15.148 15.429 14.986 15.538 14.802 15.614C14.618 15.69 14.427 15.728 14.228 15.728C14.029 15.728 13.838 15.69 13.654 15.614C13.47 15.538 13.308 15.429 13.167 15.289L0.439026 2.561C0.299011 2.42 0.190002 2.258 0.114014 2.074C0.0380249 1.89 0 1.699 0 1.5C0 1.30099 0.0380249 1.11 0.114014 0.925995C0.190002 0.741997 0.299011 0.580002 0.439026 0.438995Z"
+    fill="#9E9E9E"
+  />
+</svg>
           </button>
-
           <nav className="flex flex-col gap-8 mt-8">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className={`text-[28px] font-normal text-center transition-colors ${
-                  pathname === link.href
-                    ? "text-Uranium font-semibold underline underline-offset-4"
-                    : "text-black"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            {links.map((link) =>
+              link.label === "Log Out" ? (
+                <form key="logout" action={logoutUser}>
+                  <button
+                    type="submit"
+                    className="text-[28px] font-normal text-center transition-colors text-black w-full"
+                  >
+                    Log Out
+                  </button>
+                </form>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={closeMenu}
+                  className={`text-[28px] font-normal text-center transition-colors ${
+                    pathname === link.href
+                      ? "text-Uranium font-semibold underline underline-offset-4"
+                      : "text-black"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </nav>
         </div>
       )}

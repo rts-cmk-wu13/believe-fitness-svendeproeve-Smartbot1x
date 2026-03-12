@@ -2,6 +2,11 @@ import PopularClass from "@/Components/classes/popular";
 import ClassCard from "@/Components/classes/classCard";
 import { getAllClasses } from "@/lib/dal/Classes";
 
+
+export const metadata = {
+  title: "Classes",
+  description: "Velkommen til vores Classes Side",
+};
 export default async function ClassesPage() {
     const { data } = await getAllClasses();
 

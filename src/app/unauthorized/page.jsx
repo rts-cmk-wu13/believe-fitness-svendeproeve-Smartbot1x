@@ -1,8 +1,13 @@
 import Link from "next/link";
+export const metadata = {
+    title: 'Unauthorized Access',
+    description: 'You are not authorized to access this page.',
+};
+
 
 export default function Unauthorized() {
   return (
-    <section className="flex items-center justify-center min-h-screen p-4 bg-dustgray text-black ">
+    <section className="flex items-center justify-center min-h-screen p-4 bg-white text-black ">
       <div className="w-full max-w-md mx-auto my-8 flex flex-col items-center justify-center px-4 sm:px-6">
         <div className="text-center">
           <h2 className="mb-6 font-extrabold text-8xl sm:text-8xl md:text-9xl text-Uranium ">
@@ -15,16 +20,16 @@ export default function Unauthorized() {
             But don't worry, you can go back to the homepage, try to log in if
             you have an account, or create one.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col sm:flex-row gap-1">
             <Link
               href="/Home"
-              className="px-4 py-2 font-semibold rounded bg-Uranium text-black"
+              className="big_bttn"
             >
               Back to homepage
             </Link>
             <Link
               href="/Login"
-              className="px-4 py-2 font-semibold rounded bg-Uranium text-black"
+              className="big_bttn"
             >
               Try to log in
             </Link>

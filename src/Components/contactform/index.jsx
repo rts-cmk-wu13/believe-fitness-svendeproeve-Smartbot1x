@@ -1,6 +1,7 @@
 "use client";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { contactForm } from "./action";
+import toast from "react-hot-toast";
 
 const initialState = {
   success: false,
@@ -14,6 +15,12 @@ export default function ContactLanding() {
     contactForm,
     initialState,
   );
+  
+  useEffect(() => {
+    if (state.success && state.message) {
+      toast.success(state.message);
+    }
+  }, [state.success]);
 
   return (
     <>
@@ -54,14 +61,6 @@ export default function ContactLanding() {
         />
         {state.errors?.message && (
           <p className="error_message">{state.errors.message[0]}</p>
-        )}
-
-        {state.message && (
-          <p
-            className={`text-sm ${state.success ? "text-green-600" : "text-red-400"}`}
-          >
-            {state.message}
-          </p>
         )}
 
         <button 

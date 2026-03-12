@@ -1,13 +1,20 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { subscribeNewsletter } from "@/lib/dal/newsletter";
+import toast from "react-hot-toast";
 
 export default function Newsletter() {
   const [state, formAction, isPending] = useActionState(
     subscribeNewsletter,
     {},
   );
+    
+    useEffect(() => {
+      if (state.success && state.message) {
+        toast.success(state.message);
+      }
+    }, [state.success]);
 
   return (
     <>
