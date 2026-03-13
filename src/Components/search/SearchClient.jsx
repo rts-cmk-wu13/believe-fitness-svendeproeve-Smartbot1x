@@ -42,7 +42,7 @@ export default function SearchClient({ classes, trainers }) {
             </div>
 
             {noResults && (
-                <p className="text-center text-[#9e9e9e] text-sm mt-10">
+                <p className="text-center text-dustgray text-sm mt-10">
                     Your search did not give any results. Try to search for something else.
                 </p>
             )}
@@ -55,7 +55,7 @@ export default function SearchClient({ classes, trainers }) {
                             <Link
                                 key={classItem.id}
                                 href={`/Classes/${classItem.id}`}
-                                className="flex-shrink-0 w-[140px] relative rounded-xl overflow-hidden"
+                                className="shrink-0 w-35 relative rounded-xl overflow-hidden"
                             >
                                 <Image
                                     src={classItem.asset?.url || "/img/welcome.jpg"}
@@ -63,7 +63,7 @@ export default function SearchClient({ classes, trainers }) {
                                     width={140}
                                     height={160}
                                     unoptimized
-                                    className="w-full h-[160px] object-cover"
+                                    className="w-full h-40 object-cover"
                                 />
                                 <div className="absolute bottom-0 left-0 right-0 bg-Uranium px-2 py-1">
                                     <p className="text-black text-xs font-bold truncate">{classItem.className}</p>

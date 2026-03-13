@@ -21,7 +21,7 @@ export default async function ParticipantsPage({ params }) {
 
 
             <h1 className="text-xl font-bold mb-1">{classItem.className}</h1>
-            <p className="text-sm text-[#9e9e9e] mb-6">Participants:</p>
+            <p className="text-sm text-dustgray mb-6">Participants:</p>
 
             <div className="flex flex-col gap-3">
                 {participants.length === 0 ? (

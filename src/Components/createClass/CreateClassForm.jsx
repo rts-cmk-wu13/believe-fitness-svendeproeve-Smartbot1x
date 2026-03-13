@@ -10,7 +10,7 @@ export default function CreateClassForm({ trainers }) {
     const [state, formAction, isPending] = useActionState(createClassAction, initialState);
 
     return (
-        <form action={formAction} className="flex flex-col w-[370px] gap-4" >
+        <form action={formAction} className="flex flex-col w-92.5 gap-4" >
             <input
                 name="className"
                 placeholder="Class name..."

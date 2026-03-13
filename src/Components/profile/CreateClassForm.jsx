@@ -14,7 +14,7 @@ export default function CreateClassForm() {
   return (
     <form
       action={formAction}
-      className="flex flex-col w-[370px] gap-4"
+      className="flex flex-col w-92.5 gap-4"
       aria-label="Create a new class"
     >
       <h1 className="text-2xl font-semibold mb-2">Create a new class</h1>
@@ -48,7 +48,7 @@ export default function CreateClassForm() {
           name="classDay"
           placeholder="Class day..."
           defaultValue={state.values.classDay || ""}
-          className="base_input flex-1 w-[89px]"
+          className="base_input flex-1 w-22.25"
         />
         <input
           name="classTime"

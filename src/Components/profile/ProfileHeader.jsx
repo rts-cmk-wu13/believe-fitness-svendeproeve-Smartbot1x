@@ -15,7 +15,7 @@ export default function ProfileHeader({ user }) {
       </div>
       <div className="flex flex-col">
         <h2 className="text-lg font-semibold">{fullName}</h2>
-        <span className="text-sm text-[#9e9e9e]">{roleLabel}</span>
+        <span className="text-sm text-dustgray">{roleLabel}</span>
       </div>
     </section>
   );
