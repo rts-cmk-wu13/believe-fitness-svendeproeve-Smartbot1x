@@ -1,13 +1,19 @@
+import { getAllClasses, getAllTrainers } from "@/lib/dal/Classes";
+import SearchClient from "@/Components/search/SearchClient";
 
 export const metadata = {
     title: "Search",
-    description: "Search for classes, trainers, and more at Believe Fitness. ",
+    description: "Søg efter klasser og trænere",
 };
 
 export default async function SearchPage() {
-    <>
-    <h1>Search page</h1>
-    </>
- 
-   
+    const [classesResult, trainersResult] = await Promise.all([
+        getAllClasses(),
+        getAllTrainers(),
+    ]);
+
+    const classes = classesResult.success ? classesResult.data : [];
+    const trainers = trainersResult.success ? trainersResult.data : [];
+
+    return <SearchClient classes={classes} trainers={trainers} />;
 }
