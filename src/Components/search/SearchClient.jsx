@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { IoArrowBack } from "react-icons/io5";
 
 export default function SearchClient({ classes, trainers }) {
     const [searchQuery, setSearchQuery] = useState("");
@@ -22,6 +23,13 @@ export default function SearchClient({ classes, trainers }) {
     const noResults = searchQuery && filteredClasses.length === 0 && filteredTrainers.length === 0;
 
     return (
+        <>
+    <div className="flex items-center gap-3 px-4 pt-9 pb-2">
+    <Link href="/Home" className="text-[#9E9E9E]">
+        <IoArrowBack size={24} />
+    </Link>
+    <h1 className="text-xl font-bold">Search</h1>
+</div>
         <section className="px-4 py-6">
             <div className="flex items-center gap-2">
                 <input
@@ -87,5 +95,6 @@ export default function SearchClient({ classes, trainers }) {
                 </section>
             )}
         </section>
+        </>
     );
 }

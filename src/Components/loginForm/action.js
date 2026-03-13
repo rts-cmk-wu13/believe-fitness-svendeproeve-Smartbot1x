@@ -40,5 +40,5 @@ export async function loginUser(prevState, formData) {
     cookieStore.set("fitness-accessToken", data.token, { maxAge: 60 * 60 * 24 * 7 });
     cookieStore.set("userId", data.userId);
 
-    redirect("/Classes");
+    redirect("/Profile");
 }

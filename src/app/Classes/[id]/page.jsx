@@ -4,6 +4,7 @@ import { getClassById, getTrainerById } from "@/lib/dal/Classes";
 import { getCurrentUser } from "@/lib/dal/user";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { IoArrowBack } from "react-icons/io5";
 
 
 export const metadata = {
@@ -29,7 +30,7 @@ const isJoined = classItem.users?.some((p) => p.id == user?.id) ?? false;
 
     return (
         <>
-    
+ 
       <section className="relative w-full h-[432px] overflow-hidden bg-gray-200">
         <Image
           src={classItem.asset?.url || "/img/welcome.jpg"}
@@ -42,6 +43,10 @@ const isJoined = classItem.users?.some((p) => p.id == user?.id) ?? false;
            placeholder="blur" 
 
         />
+       
+            <Link href="/Home" className="absolute top-4 left-4 text-white z-10">
+                <IoArrowBack size={24} />
+            </Link>
         <div className="absolute bottom-0 left-0 right-0 px-4 py-6 bg-linear-to-t from-black to-transparent">
           <h1 className="text-Uranium text-4xl font-bold leading-tight">
             {classItem.className}
