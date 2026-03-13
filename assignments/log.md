@@ -9,25 +9,25 @@ Husk, at du ikke må arbejde på din opgave mellem kl. 16:00 og kl. 8:00.
 ## Dag 1
 
 Morgen - (8:00)  
-pause ()
+pause (1t)
 Eftermiddag - (17:00)
 
 ## Dag 2
 
-Morgen - (tidspunkt)  
-Eftermiddag - (tidspunkt)
+Morgen - (8:55)  
+Eftermiddag - (16:00)
 
 ## Dag 3
 
-Morgen - (tidspunkt)  
-Eftermiddag - (tidspunkt)
+Morgen - (9:05)  
+Eftermiddag - (16:00)
 
 ## Dag 4
 
-Morgen - (tidspunkt)  
-Eftermiddag - (tidspunkt)
+Morgen - (9:00)  
+Eftermiddag - (16)
 
 ## Dag 5
 
-Morgen - (tidspunkt)  
+Morgen - (8:00)  
 Eftermiddag - (tidspunkt)
