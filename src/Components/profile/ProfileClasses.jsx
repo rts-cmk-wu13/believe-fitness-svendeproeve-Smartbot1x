@@ -18,7 +18,7 @@ export default function ProfileClasses({ user, classes }) {
             {classes.map((cls) => (
                 <div
                     key={cls.id}
-                    className="rounded-3xl border w-[370px] border-[#E0E0E0] px-5 py-4 flex flex-col gap-3 "
+                    className="rounded-3xl ml-3.5 border w-[370px] border-[#E0E0E0] px-5 py-4 flex flex-col gap-3 "
                 >
                     <div className="flex flex-col items-start gap-2.5 px-5 pt-4 pb-5 w-full"></div>
                     <Link href={`/Classes/${cls.id}`}>

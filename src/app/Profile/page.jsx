@@ -7,7 +7,7 @@ import { IoArrowBack } from "react-icons/io5";
 
 export default async function ProfilePage() {
   const userResult = await getCurrentUser();
-    const { success, user } = userResult;
+    const { success, user } = userResult; 
 
     if (!success || !user) {
         return (
