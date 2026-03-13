@@ -30,7 +30,7 @@ const isJoined = classItem.users?.some((p) => p.id == user?.id) ?? false;
     return (
         <>
     
-      <section className="relative w-full h-[300px] overflow-hidden bg-gray-200">
+      <section className="relative w-full h-[432px] overflow-hidden bg-gray-200">
         <Image
           src={classItem.asset?.url || "/img/welcome.jpg"}
           alt={classItem.className}

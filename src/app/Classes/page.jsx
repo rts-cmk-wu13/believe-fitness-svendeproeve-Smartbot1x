@@ -21,7 +21,7 @@ export default async function ClassesPage() {
  
 
             <h2 className="heading_classes ml-5 mb-3.25 ">Classes For You</h2>
-            <section className="flex ml-5 gap-4 overflow-hidden">
+            <section className="flex ml-5 gap-4 overflow-scroll ">
                    <div className="overlay_content absolute bottom-0 "></div>
                 {rest.map((classItem) => (
                     <ClassCard Class={classItem} key={classItem.id} />
