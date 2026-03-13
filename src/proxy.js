@@ -10,5 +10,5 @@ export function proxy(request) {
 // export default function proxy(request) { ... }
 
 export const config = {
-    matcher: ['/Classes/:path*', '/Profile/:path*'],
+    matcher: [/* '/Classes/:path*', */ '/Profile/:path*'],
 }

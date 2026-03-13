@@ -197,4 +197,15 @@ line-height: 17px;
     transform: translateY(0);
   }
 }
+.coach_container {
+  display: flex;
+width: 239px;
+align-items: center;
+gap: 20px;
 
+}
+.coach_container img {
+  border-radius: 16px;
+  background: lightgray 50% / cover no-repeat;
+  object-fit: cover !important ;
+}

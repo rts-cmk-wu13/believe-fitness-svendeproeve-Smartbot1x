@@ -30,7 +30,7 @@ export default function Navbar({ isLoggedIn }) {
     { label: "Home", href: "/Home" },
     { label: "Popular classes", href: "/Classes" },
     { label: "Search", href: "/Search" },
-    { label: "My Profile", href: "/Profile" },
+   ...(isLoggedIn ? [{ label: "My Profile", href: "/Profile" }] : []),
     isLoggedIn
       ? { label: "Log Out", href: "/Logout" }
       : { label: "Log In", href: "/Login" },

@@ -11,7 +11,7 @@ export default function Hero() {
 
         <Link
           type="button"
-          href="/"
+          href="/Classes"
           className="absolute top-3/4 left-6 bg-Uranium text-Black w-28.25 h-12 rounded-3xl transition duration-300 flex items-center justify-center uppercase"
         >
           classes
